@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  orthanc:
+    image: jodogne/orthanc-plugins:latest
+    container_name: orthanc
+    ports:
+      - "8042:8042"
+      - "4242:4242"
+    volumes:
+      - ./data/dicom:/var/lib/orthanc/dicom:rw
+      - ./orthanc-config.json:/etc/orthanc/orthanc.json:ro
+    environment:
+      - ORTHANC_NAME=MedImgOrthanc
+
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    container_name: worker
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./src:/app/src
+      - ./studies.db:/app/studies.db
+    depends_on:
+      - orthanc
+    environment:
+      - ORTHANC_URL=http://orthanc:8042
+      - DB_PATH=/app/studies.db
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./src:/app/src
+      - ./studies.db:/app/studies.db
+      - ./reports/gradcam:/app/reports/gradcam
+    depends_on:
+      - worker
+    environment:
+      - DB_PATH=/app/studies.db
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    container_name: web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    environment:
+      - VITE_API_URL=http://localhost:8000

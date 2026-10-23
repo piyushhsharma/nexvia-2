@@ -1,0 +1,14 @@
+{
+  "Name": "MedImgOrthanc",
+  "StorageDirectory": "/var/lib/orthanc/dicom",
+  "IndexDirectory": "/var/lib/orthanc/db",
+  "RemoteAccessAllowed": true,
+  "AuthenticationEnabled": false,
+  "DicomAet": "ORTHANC",
+  "DicomPort": 4242,
+  "HttpPort": 8042,
+  "DefaultEncoding": "Utf8",
+  "Users": {
+    "admin": "admin"
+  }
+}

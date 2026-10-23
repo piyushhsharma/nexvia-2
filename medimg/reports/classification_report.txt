@@ -1,0 +1,28 @@
+
+Classification Report
+=====================
+Best Validation Accuracy: 40.00%
+
+Per-label AUROC:
+- Pneumonia: 0.714
+- Effusion: 0.490
+- Cardiomegaly: 0.528
+- No Finding: 0.667
+
+Sensitivity:
+- Pneumonia: 0.857
+- Effusion: 0.250
+- Cardiomegaly: 0.000
+- No Finding: 0.000
+
+Specificity:
+- Pneumonia: 0.462
+- Effusion: 0.583
+- Cardiomegaly: 1.000
+- No Finding: 1.000
+
+Confusion Matrix:
+[[6 1 0 0]
+ [6 2 0 0]
+ [0 2 0 0]
+ [1 2 0 0]]

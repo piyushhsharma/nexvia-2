@@ -1,0 +1,5 @@
+
+Segmentation Report
+===================
+Best Validation Dice: 0.5858
+Validation Loss: 0.4079

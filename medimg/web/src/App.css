@@ -1,0 +1,47 @@
+.app {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.banner {
+  background: #d32f2f;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.header {
+  background: white;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.header nav button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.header nav button.active {
+  background: #1976d2;
+  color: white;
+}
+
+.content {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}

@@ -1,0 +1,159 @@
+.study-viewer {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.back-button {
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.viewer-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.prediction-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prediction-label {
+  color: #666;
+}
+
+.prediction-value {
+  font-weight: bold;
+  color: #1976d2;
+  font-size: 18px;
+}
+
+.confidence-value {
+  color: #666;
+  font-size: 14px;
+}
+
+.viewer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.image-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image-container h3 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.placeholder-image {
+  background: #f5f5f5;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  position: relative;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.6;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+.controls button {
+  padding: 10px 20px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.controls button.active {
+  background: #1976d2;
+  color: white;
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.decision-panel {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.decision-panel h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.decision-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.approve-button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.reject-button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #f44336;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
